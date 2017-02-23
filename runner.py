@@ -1,4 +1,4 @@
-import sys, parseInput, parseOutput, program, melOne
+import sys, parseInput, parseOutput, program, zeroScore, melOne
 
 inputs = parseInput.getParsedInputs()
 outputs = {}
@@ -6,6 +6,7 @@ outputs = {}
 for name, input in inputs.items():
     processors = {
         'default': program,
+        'zeroScore': zeroScore,
         'melOne': melOne,
     }
 
