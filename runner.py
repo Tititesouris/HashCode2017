@@ -1,10 +1,11 @@
-import sys, parseInput, parseOutput, program, zeroScore, melOne
+import sys, parseInput, parseOutput, program, zeroScore, melOne, phreddOne
 from os import listdir
 
 processors = {
     'default': program,
     'zeroScore': zeroScore,
     'melOne': melOne,
+    'phreddOne': phreddOne
 }
 
 choice = 'default'
