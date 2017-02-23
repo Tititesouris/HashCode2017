@@ -1,4 +1,5 @@
 # HashCode 2017
 Team 1066:
-- [Quentin Brault aka Tititesouris](https://twitter.com/Tititesouris)
-- [James Wellsted aka Phredd](https://twitter.com/Phredd_)
+- [James Wellsted @Phredd](https://twitter.com/Phredd)
+- [Katie Paxton-Fear @RapidBug](https://twitter.com/RapidBug)
+- [Quentin Brault aka @Tititesouris](https://twitter.com/Tititesouris)
