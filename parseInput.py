@@ -1,10 +1,3 @@
-from os import listdir
-
-inputPath = "input/"
-inputFiles = listdir(inputPath)
-
-# Contains the input data as { fileName: data }
-parsedInputs = {}
 
 # Takes in a string and returns the data represented by that string
 def parseInput(file):
@@ -54,10 +47,13 @@ def read_request(file, data):
 def split_line(line):
     return line.split(" ")
 
-for fileName in inputFiles:
-    print("Parsing " + fileName)
-    file = open(inputPath + fileName, "r")
-    parsedInputs[fileName.split(".")[0]] = parseInput(file)
+def getParsedInputs(files):
+    # Contains the input data as { fileName: data }
+    parsedInputs = {}
 
-def getParsedInputs():
+    for fileName in files:
+        print("Parsing " + fileName)
+        file = open(fileName, "r")
+        parsedInputs[fileName.split(".")[0]] = parseInput(file)
+
     return parsedInputs
