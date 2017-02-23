@@ -2,7 +2,12 @@ import parseInput, parseOutput
 
 inputs = parseInput.getParsedInputs()
 
-# Contains the output data as { fileName: data }
+# Contains the output data as
+# { fileName: {
+#   cacheId1: [videoId1, videoId2],
+#   cacheId2: [videoId2]
+#   }
+# }
 outputs = {}
 
 
