@@ -1,11 +1,12 @@
-import sys, parseInput, parseOutput, program
+import sys, parseInput, parseOutput, program, melOne
 
 inputs = parseInput.getParsedInputs()
 outputs = {}
 
 for name, input in inputs.items():
     processors = {
-        'default': program
+        'default': program,
+        'melOne': melOne,
     }
 
     choice = 'default'
