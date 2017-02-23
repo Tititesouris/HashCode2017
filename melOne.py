@@ -6,8 +6,6 @@ def getOutput(input):
     for cacheId in range(input["cache_count"]):
         cache_content[cacheId] = []
 
-    input['endpoints'] = sorted(input['endpoints'], key=endpoint_cost)
-
     while do_round(input, cache_content, cache_free):
         pass
 
@@ -15,7 +13,10 @@ def getOutput(input):
 
 
 def request_cost(requests):
-    return max(requests.values())
+    if len(requests.values()) > 0:
+        return max(requests.values())
+    else:
+        return 0
 
 
 def endpoint_cost(endpoint):
@@ -23,6 +24,8 @@ def endpoint_cost(endpoint):
 
 
 def do_round(input, cache_content, cache_free):
+    input['endpoints'] = sorted(input['endpoints'], key=endpoint_cost)
+
     for endpoint in input['endpoints']:
         cache_preference = sorted(endpoint['latency_to_caches'], key=endpoint['latency_to_caches'].__getitem__)
 
