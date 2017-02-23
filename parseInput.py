@@ -12,7 +12,7 @@ def parseInput(file):
     video_count, endpoint_count, requests, cache_count, cache_size = split_line(file.readline())
 
     # Dictionary to return
-    data = {'videos': [], 'endpoint': [], 'cache_size': int(cache_size), 'cache_count': int(cache_count)}
+    data = {'videos': [], 'endpoints': [], 'cache_size': int(cache_size), 'cache_count': int(cache_count)}
 
     # Read the video sizes
     video_sizes = split_line(file.readline())
@@ -24,7 +24,7 @@ def parseInput(file):
     data['videos'] = list(map(int, video_sizes))
 
     for x in range(0, int(endpoint_count)):
-        data['endpoint'].append(read_endpoint(file))
+        data['endpoints'].append(read_endpoint(file))
 
     for x in range(0, int(requests)):
         read_request(file, data)
@@ -48,7 +48,7 @@ def read_request(file, data):
     video, endpoint, count = split_line(file.readline())
 
     endpoint_as_int = int(endpoint)
-    data['endpoint'][endpoint_as_int]['requests'][int(video)] = int(count)
+    data['endpoints'][endpoint_as_int]['requests'][int(video)] = int(count)
 
 
 def split_line(line):
@@ -58,7 +58,6 @@ for fileName in inputFiles:
     print("Parsing " + fileName)
     file = open(inputPath + fileName, "r")
     parsedInputs[fileName.split(".")[0]] = parseInput(file)
-
 
 def getParsedInputs():
     return parsedInputs
