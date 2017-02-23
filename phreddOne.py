@@ -52,7 +52,7 @@ def myAlg(input):
                         cacheSpace[cache] -= input["videos"][video]
                         break
 
-    print(output)
-    print(cacheSpace)
+    #print(output)
+    #print(cacheSpace)
 
     return output
