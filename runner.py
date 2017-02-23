@@ -7,6 +7,8 @@ processors = {
     'melOne': melOne,
 }
 
+choice = 'default'
+
 if len(sys.argv) > 1:
     choice = sys.argv[1]
 
